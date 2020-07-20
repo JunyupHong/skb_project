@@ -1,0 +1,70 @@
+$text-color: #ededed;
+
+.modal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    
+    .modal-window {
+        width: 460px;
+        min-height: 280px;
+        background: #999;
+        margin: auto;
+        padding: 24px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        .title-area {
+            display: flex;
+            .title {
+                font-size: 24px;
+                color: $text-color;
+            }
+            .empty-space {
+                flex: 1;
+            }
+            .close-icon {
+                color: $text-color;
+                .test {
+                    color: $text-color;
+                }
+            }
+        }
+        .content-area {
+            flex: 1;
+            margin: 12px 0;
+            max-height: 500px;
+            overflow: auto;
+            .content {
+                color: $text-color;
+                font-size: 18px;
+            }
+        }
+        .button-area {
+            display: flex;
+            flex-direction: row-reverse;
+            .button {
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                padding: 2px 12px;
+                margin-left: 12px;
+                border-radius: 4px;
+                color: $text-color;
+                &:hover {
+                    cursor: pointer;
+                }
+                &.positive {
+                    background: #aaaf;
+                }
+                &.negative {
+                    border: solid 1px;
+                }
+            }
+        }
+    }
+}
