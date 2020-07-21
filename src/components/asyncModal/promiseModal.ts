@@ -12,6 +12,9 @@ declare module 'vue/types/vue' {
     name: 'promiseModal'
 })
 export default class PromiseModal extends Vue {
+    private ui = {
+        isOpen: false,
+    }
     private on(title: string, content: string) {
         console.log(title, content);
     }

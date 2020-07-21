@@ -1,5 +1,5 @@
 <template>
-    <div class="promise-modal">
+    <div v-if="ui.isOpen" class="promise-modal">
         Promise Modal
     </div>
 </template>

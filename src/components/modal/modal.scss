@@ -1,6 +1,11 @@
-$text-color: #ededed;
+$modal-color: rgb(107, 103, 103);
+$title-color: #ededed;
+$text-color: rgb(190, 182, 182);
+$button-color: rgb(90, 83, 83);
 
 .modal-wrapper {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+
     position: absolute;
     top: 0;
     left: 0;
@@ -8,29 +13,32 @@ $text-color: #ededed;
     height: 100vh;
     background: rgba(0, 0, 0, 0.1);
     display: flex;
-    
+
     .modal-window {
-        width: 460px;
-        min-height: 280px;
-        background: #999;
+        width: 520px;
+        min-height: 240px;
+        background: $modal-color;
         margin: auto;
-        padding: 24px;
-        border-radius: 12px;
+        padding: 60px;
         display: flex;
         flex-direction: column;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
         .title-area {
-            display: flex;
             .title {
-                font-size: 24px;
-                color: $text-color;
+                font-size: 36px;
+                font-weight: 600;
+                color: $title-color;
+                &[center] {
+                   text-align: center; 
+                }
             }
             .empty-space {
                 flex: 1;
             }
             .close-icon {
-                color: $text-color;
-                .test {
-                    color: $text-color;
+                color: $title-color;
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
@@ -39,30 +47,44 @@ $text-color: #ededed;
             margin: 12px 0;
             max-height: 500px;
             overflow: auto;
+            display: flex;
+            align-items: center;
             .content {
+                flex: 1;
                 color: $text-color;
-                font-size: 18px;
+                font-weight: 400;
+                font-size: 24px;
+                &[center] {
+                    text-align: center;
+                }
             }
         }
         .button-area {
             display: flex;
             flex-direction: row-reverse;
+            justify-content: flex-start;
+            &[center] {
+                flex-direction: row;
+                justify-content: center;
+            }
             .button {
-                height: 30px;
                 text-align: center;
-                line-height: 30px;
-                padding: 2px 12px;
-                margin-left: 12px;
-                border-radius: 4px;
+                font-weight: 600;
+                font-size: 28px;
+                padding: 12px 80px;
+                margin-right: 12px;
                 color: $text-color;
+                box-sizing: content-box;
+                background: $button-color;
+                border: solid 3px $modal-color;
                 &:hover {
                     cursor: pointer;
+                    border: solid 3px $title-color;
+                    color: $title-color;
                 }
                 &.positive {
-                    background: #aaaf;
                 }
                 &.negative {
-                    border: solid 1px;
                 }
             }
         }

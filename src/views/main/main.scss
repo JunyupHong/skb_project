@@ -1,0 +1,60 @@
+.main-wrapper {
+    .test-area {
+        display: flex;
+        justify-content: space-between;
+        .content-area {
+            width: 45%;
+            margin: 12px 0;
+            background: #eee;
+            border-radius: 4px;
+            padding: 12px 24px;
+            .content {
+                .option {
+                    .option-title {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    .option-content-area {
+                        display: flex;
+                        justify-content: space-around;
+                        .option-content {
+                            border: solid 1px;
+                            border-radius: 4px;
+                            padding: 4px 20px;
+                        }
+                    }
+                }
+                .button {
+                    width: 100%;
+                    border-radius: 4px;
+                    text-align: center;
+                    padding: 4px;
+                    margin-top: 24px;
+                    border: solid 1px;
+                    font-weight: 600;
+                }
+            }
+            
+        }
+    }
+    // .button-area {
+    //     display: flex;
+    //     margin: 24px 0;
+    //     .button {
+    //         padding: 24px 32px;
+    //         border: solid 1px #444;
+    //         color: #444;
+    //         border-radius: 4px;
+    //         text-align: center;
+    //         margin-right: 40px;
+    //         font-size: 16px;
+    //         font-weight: 600;
+    //         &:hover {
+    //             cursor: pointer;
+    //             color: #ededed;
+    //             border: solid 1px #aaa;
+    //             background: #aaa;
+    //         }
+    //     }
+    // }
+}
