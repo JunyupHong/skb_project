@@ -10,8 +10,6 @@ declare module 'vue/types/vue' {
 export default {
     instance: new Modal(),
     install() {
-        console.log('install!!');
-        console.log(Vue.prototype.$modal);
         if (Vue.prototype.$modal === undefined) {
             Vue.prototype.$modal = this.instance;
         }

@@ -6,7 +6,7 @@ $button-color: rgb(90, 83, 83);
 .modal-wrapper {
     font-family: Avenir, Helvetica, Arial, sans-serif;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -15,21 +15,41 @@ $button-color: rgb(90, 83, 83);
     display: flex;
 
     .modal-window {
-        width: 520px;
-        min-height: 240px;
+        &[size=normal] {
+            width: 600px;
+            min-height: 380px;
+            padding: 60px;
+        }
+        &[size=small] {
+            width: 480px;
+            min-height: 300px;
+            padding: 40px;
+        }
+        &[size=big] {
+            width: 800px;
+            min-height: 480px;
+            padding: 32px;
+        }
         background: $modal-color;
         margin: auto;
-        padding: 60px;
         display: flex;
         flex-direction: column;
         box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
         .title-area {
             .title {
-                font-size: 36px;
-                font-weight: 600;
                 color: $title-color;
+                font-weight: 600;
                 &[center] {
                    text-align: center; 
+                }
+                &[size=normal] {
+                    font-size: 36px;
+                }
+                &[size=small] {
+                    font-size: 32px;
+                }
+                &[size=big] {
+                    font-size: 48px;
                 }
             }
             .empty-space {
@@ -44,8 +64,6 @@ $button-color: rgb(90, 83, 83);
         }
         .content-area {
             flex: 1;
-            margin: 12px 0;
-            max-height: 500px;
             overflow: auto;
             display: flex;
             align-items: center;
@@ -53,9 +71,23 @@ $button-color: rgb(90, 83, 83);
                 flex: 1;
                 color: $text-color;
                 font-weight: 400;
-                font-size: 24px;
                 &[center] {
                     text-align: center;
+                }
+                &[size=normal] {
+                    margin: 12px 0;
+                    max-height: 400px;
+                    font-size: 24px;
+                }
+                &[size=small] {
+                    margin: 8px 0;
+                    max-height: 360px;
+                    font-size: 24px;
+                }
+                &[size=big] {
+                    margin: 12px 0;
+                    max-height: 400px;
+                    font-size: 36px;
                 }
             }
         }
@@ -69,10 +101,7 @@ $button-color: rgb(90, 83, 83);
             }
             .button {
                 text-align: center;
-                font-weight: 600;
-                font-size: 28px;
-                padding: 12px 80px;
-                margin-right: 12px;
+                
                 color: $text-color;
                 box-sizing: content-box;
                 background: $button-color;
@@ -81,6 +110,24 @@ $button-color: rgb(90, 83, 83);
                     cursor: pointer;
                     border: solid 3px $title-color;
                     color: $title-color;
+                }
+                &[size=normal] {
+                    font-weight: 600;
+                    font-size: 28px;
+                    padding: 12px 80px;
+                    margin-right: 12px;
+                }
+                &[size=small] {
+                    font-weight: 500;
+                    font-size: 24px;
+                    padding: 8px 64px;
+                    margin-right: 8px;
+                }
+                &[size=big] {
+                    font-weight: 600;
+                    font-size: 32px;
+                    padding: 12px 88px;
+                    margin-right: 20px;
                 }
                 &.positive {
                 }
