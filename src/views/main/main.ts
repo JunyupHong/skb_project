@@ -59,6 +59,28 @@ export default class Main extends Vue {
             }, this.normalModalTimeout.content, this.normalModalTimeout.title !== '' ? this.normalModalTimeout.title : undefined),
             1500);
     }
+
+    private async promiseModalOn() {
+        try {
+            await this.$promiseModal.on({}, '11', '11');
+            console.log('resolve');
+        } catch(e) {
+            console.log('reject');
+        }
+    }
+    private async promiseModalOnTimeout() {
+        setTimeout(async () => {
+            try {
+                await this.$promiseModal.on({},'22', '22');
+                console.log('timeout resolve');
+                await this.$promiseModal.on({},'33', '33');
+                console.log('timeout resolve2');
+            } catch(e) {
+                console.log('timeout reject');
+            }
+        },
+        1500);
+    }
     private mounted () {
         // this.$promiseModal.on({}, 'content', 'tt');
     }

@@ -5,9 +5,9 @@
     .test-area {
         display: flex;
         justify-content: space-between;
+        margin: 24px 0;
         .content-area {
             width: 48%;
-            margin-top: 24px;
             background: #eee;
             border-radius: 4px;
             padding: 24px 36px 36px 36px;
@@ -18,5 +18,9 @@
                 width: 100%;
             }
         }
+    }
+    .line {
+        width: 100%;
+        border-top: dashed 1px #aaa;
     }
 }
