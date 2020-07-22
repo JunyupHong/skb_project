@@ -31,14 +31,17 @@ export default class Modal extends Vue {
     private content = '';
 
     private on(uiOption: UIOptionType, content: string, title?: string) {
-        this.title = title;
-        this.content = content;
-        this.ui.size = uiOption.size ? uiOption.size : 'normal';
-        this.ui.align = uiOption.align ? uiOption.align : 'center';
-        this.ui.negativeMessage = uiOption.negativeMessage ? uiOption.negativeMessage : undefined;
-        this.ui.positiveMessage = uiOption.positiveMessage ? uiOption.positiveMessage : '확인';
-        this.ui.isOpen = true;
-        
+        if (!this.ui.isOpen) {
+            this.title = title;
+            this.content = content;
+            this.ui.size = uiOption.size ? uiOption.size : 'normal';
+            this.ui.align = uiOption.align ? uiOption.align : 'center';
+            this.ui.negativeMessage = uiOption.negativeMessage ? uiOption.negativeMessage : undefined;
+            this.ui.positiveMessage = uiOption.positiveMessage ? uiOption.positiveMessage : '확인';
+            this.ui.isOpen = true;
+        } else {
+            alert('이미 모달이 존재 합니다!');
+        }
     }
     private off() {
         this.ui.isOpen = false;

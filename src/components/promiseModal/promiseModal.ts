@@ -53,6 +53,8 @@ export default class PromiseModal extends Vue {
                 this.resolve = resolve;
                 this.reject = reject;
             });
+        } else {
+            alert('이미 모달이 존재합니다..');
         }
     }
 
