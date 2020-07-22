@@ -30,6 +30,11 @@ $button-color: rgb(90, 83, 83);
             min-height: 480px;
             padding: 32px;
         }
+        &[size=full] {
+            width: 100%;
+            height: 100%;
+            padding: 120px;
+        }
         background: $modal-color;
         margin: auto;
         display: flex;
@@ -50,6 +55,9 @@ $button-color: rgb(90, 83, 83);
                 }
                 &[size=big] {
                     font-size: 48px;
+                }
+                &[size=full] {
+                    font-size: 60px;
                 }
             }
             .empty-space {
@@ -89,6 +97,11 @@ $button-color: rgb(90, 83, 83);
                     max-height: 400px;
                     font-size: 36px;
                 }
+                &[size=full] {
+                    margin: 24px 0;
+                    max-height: 600px;
+                    font-size: 40px;
+                }
             }
         }
         .button-area {
@@ -101,9 +114,7 @@ $button-color: rgb(90, 83, 83);
             }
             .button {
                 text-align: center;
-                
                 color: $text-color;
-                box-sizing: content-box;
                 background: $button-color;
                 border: solid 3px $modal-color;
                 &:hover {
@@ -115,19 +126,25 @@ $button-color: rgb(90, 83, 83);
                     font-weight: 600;
                     font-size: 28px;
                     padding: 12px 80px;
-                    margin-right: 12px;
+                    margin: 0 6px;
                 }
                 &[size=small] {
                     font-weight: 500;
                     font-size: 24px;
                     padding: 8px 64px;
-                    margin-right: 8px;
+                    margin: 0 4px;
                 }
                 &[size=big] {
                     font-weight: 600;
                     font-size: 32px;
                     padding: 12px 88px;
-                    margin-right: 20px;
+                    margin: 0 10px;
+                }
+                &[size=full] {
+                    font-weight: 600;
+                    font-size: 32px;
+                    padding: 12px 88px;
+                    margin: 0 20px;
                 }
                 &.positive {
                 }

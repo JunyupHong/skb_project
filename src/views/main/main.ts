@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 
-type SizeType = 'small' | 'big' | 'normal';
+type SizeType = 'small' | 'big' | 'normal' | 'full';
 type AlignType = 'center' | 'left';
 interface UIOptionType {
     size?: SizeType;
@@ -14,7 +14,7 @@ interface UIOptionType {
 export default class Main extends Vue {
     private normalModal: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
         option: {
-            size: ['small', 'normal', 'big'],
+            size: ['small', 'normal', 'big', 'full'],
             align: ['center', 'left'], 
         },
         ui: {
@@ -58,5 +58,8 @@ export default class Main extends Vue {
                 negativeMessage: this.normalModalTimeout.ui.negativeMessage !== '' ? this.normalModalTimeout.ui.negativeMessage : undefined,
             }, this.normalModalTimeout.content, this.normalModalTimeout.title !== '' ? this.normalModalTimeout.title : undefined),
             1500);
+    }
+    private mounted () {
+        // this.$promiseModal.on({}, 'content', 'tt');
     }
 }

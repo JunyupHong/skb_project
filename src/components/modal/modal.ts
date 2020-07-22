@@ -2,7 +2,7 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 
 
-type SizeType = 'small' | 'big' | 'normal';
+type SizeType = 'normal' | 'small' | 'big' | 'full';
 type AlignType = 'center' | 'left';
 interface UIOptionType {
     size?: SizeType;
@@ -13,8 +13,8 @@ interface UIOptionType {
 
 declare module 'vue/types/vue' {
     interface Modal {
-        on: (uiOption: UIOptionType, content: string, title?: string) => {};
-        off: () => {};
+        on: (uiOption: UIOptionType, content: string, title?: string) => void;
+        off: () => void;
     }
 }
 
@@ -38,6 +38,7 @@ export default class Modal extends Vue {
         this.ui.negativeMessage = uiOption.negativeMessage ? uiOption.negativeMessage : undefined;
         this.ui.positiveMessage = uiOption.positiveMessage ? uiOption.positiveMessage : '확인';
         this.ui.isOpen = true;
+        
     }
     private off() {
         this.ui.isOpen = false;
