@@ -41,6 +41,35 @@ export default class Main extends Vue {
         content: 'normal modal timeout test',
     }
 
+    private promiseModal: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
+        option: {
+            size: ['small', 'normal', 'big', 'full'],
+            align: ['center', 'left'], 
+        },
+        ui: {
+            size: 'normal',
+            align: 'center',
+            positiveMessage: '확인',
+            negativeMessage: '',
+        },
+        title: '',
+        content: 'promise modal test',
+    }
+    private promiseModalTimeout: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
+        option: {
+            size: ['small', 'normal', 'big'],
+            align: ['center', 'left'], 
+        },
+        ui: {
+            size: 'normal',
+            align: 'center',
+            positiveMessage: '확인',
+            negativeMessage: '',
+        },
+        title: '',
+        content: 'promise modal timeout test',
+    }
+
     private normalModalOn () {
         console.log(this.normalModal);
         this.$modal.on({
@@ -62,21 +91,31 @@ export default class Main extends Vue {
 
     private async promiseModalOn() {
         try {
-            await this.$promiseModal.on({}, '11', '11');
-            console.log('resolve');
+            await this.$promiseModal.on({
+                size: this.promiseModal.ui.size,
+                align: this.promiseModal.ui.align,
+                positiveMessage: this.promiseModal.ui.positiveMessage !== '' ? this.promiseModal.ui.positiveMessage : undefined,
+                negativeMessage: this.promiseModal.ui.negativeMessage !== '' ? this.promiseModal.ui.negativeMessage : undefined,
+            }, this.promiseModal.content, this.promiseModal.title !== '' ? this.promiseModal.title : undefined);
+            console.log('resolve done');
         } catch(e) {
-            console.log('reject');
+            console.log('reject done');
         }
     }
     private async promiseModalOnTimeout() {
         setTimeout(async () => {
             try {
-                await this.$promiseModal.on({},'22', '22');
-                console.log('timeout resolve');
-                await this.$promiseModal.on({},'33', '33');
-                console.log('timeout resolve2');
+                await this.$promiseModal.on({
+                    size: this.promiseModalTimeout.ui.size,
+                    align: this.promiseModalTimeout.ui.align,
+                    positiveMessage: this.promiseModalTimeout.ui.positiveMessage !== '' ? this.promiseModalTimeout.ui.positiveMessage : undefined,
+                    negativeMessage: this.promiseModalTimeout.ui.negativeMessage !== '' ? this.promiseModalTimeout.ui.negativeMessage : undefined,
+                }, this.promiseModalTimeout.content, this.promiseModalTimeout.title !== '' ? this.promiseModalTimeout.title : undefined);
+                console.log('timeout resolve done');
+                // await this.$promiseModal.on({},'33', '33');
+                // console.log('timeout resolve2');
             } catch(e) {
-                console.log('timeout reject');
+                console.log('timeout reject done');
             }
         },
         1500);
