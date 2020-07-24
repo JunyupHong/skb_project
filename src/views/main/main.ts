@@ -112,8 +112,8 @@ export default class Main extends Vue {
                     negativeMessage: this.promiseModalTimeout.ui.negativeMessage !== '' ? this.promiseModalTimeout.ui.negativeMessage : undefined,
                 }, this.promiseModalTimeout.content, this.promiseModalTimeout.title !== '' ? this.promiseModalTimeout.title : undefined);
                 console.log('timeout resolve done');
-                // await this.$promiseModal.on({},'33', '33');
-                // console.log('timeout resolve2');
+                await this.$promiseModal.on({size: 'full'},'두번째 modal 입니다', 'PROMISE MODAL');
+                console.log('timeout resolve2');
             } catch(e) {
                 console.log('timeout reject done');
             }
