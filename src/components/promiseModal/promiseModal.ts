@@ -1,15 +1,6 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-
-
-type SizeType = 'normal' | 'small' | 'big' | 'full';
-type AlignType = 'center' | 'left';
-interface UIOptionType {
-    size?: SizeType;
-    align?: AlignType;
-    negativeMessage?: string;
-    positiveMessage?: string;
-}
+import { SizeType, AlignType, UIOptionType} from './type';
 
 declare module 'vue/types/vue' {
     interface PromiseModal extends Vue {
@@ -54,18 +45,16 @@ export default class PromiseModal extends Vue {
                 this.reject = reject;
             });
         } else {
-            alert('이미 모달이 존재합니다..');
+            console.log('modal already exist');
         }
     }
 
     private onResolve() {
         this.ui.isOpen = false;
-        console.log('resolve!', this.content);
         this.resolve();
     }
     private onReject() {
         this.ui.isOpen = false;
-        console.log('reject!', this.content);
         this.reject();
     }
 }

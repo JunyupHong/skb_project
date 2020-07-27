@@ -40,7 +40,7 @@ export default class Modal extends Vue {
             this.ui.positiveMessage = uiOption.positiveMessage ? uiOption.positiveMessage : '확인';
             this.ui.isOpen = true;
         } else {
-            alert('이미 모달이 존재 합니다!');
+            console.log('modal already exist');
         }
     }
     private off() {
