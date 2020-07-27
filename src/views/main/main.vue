@@ -23,31 +23,7 @@
                 </div>
                 <v-btn class="button" @click="normalModalOn">modal on</v-btn>
             </div>
-            <div class="content-area">
-                <h2>Normal Modal Test - Timeout</h2>
-                <div class="option">
-                    <v-select
-                        :items="normalModalTimeout.option.size"
-                        label="Size"
-                        v-model="normalModalTimeout.ui.size"
-                    ></v-select>
-                    <v-select
-                        :items="normalModalTimeout.option.align"
-                        label="Horizontal Align"
-                        v-model="normalModalTimeout.ui.align"
-                    ></v-select>
-                    <v-text-field label="Positive Message" v-model="normalModalTimeout.ui.positiveMessage"></v-text-field>
-                    <v-text-field label="Negative Message" v-model="normalModalTimeout.ui.negativeMessage"></v-text-field>
-                    <v-text-field label="Title" v-model="normalModalTimeout.title"></v-text-field>
-                    <v-text-field label="Content" v-model="normalModalTimeout.content"></v-text-field>
-                </div>
-                <v-btn class="button" @click="normalModalOnTimeout">timeout modal on</v-btn>
-            </div>
-           
-        </div>
-        <div class="line"></div>
-        <div class="test-area">
-            <div class="content-area">
+             <div class="content-area">
                 <h2>Promise Modal Test</h2>
                 <div class="option">
                     <v-select
@@ -67,27 +43,51 @@
                 </div>
                 <v-btn class="button" @click="promiseModalOn">modal on</v-btn>
             </div>
+           
+        </div>
+        <div class="line"></div>
+        <div class="test-area">
             <div class="content-area">
-                <h2>Promise Modal Test - Timeout</h2>
+                <h2>Promise Modal Test - Multiple</h2>
                 <div class="option">
                     <v-select
-                        :items="promiseModalTimeout.option.size"
+                        :items="promiseModalMultiple.option.size"
                         label="Size"
-                        v-model="promiseModalTimeout.ui.size"
+                        v-model="promiseModalMultiple.ui.size"
                     ></v-select>
                     <v-select
-                        :items="promiseModalTimeout.option.align"
+                        :items="promiseModalMultiple.option.align"
                         label="Horizontal Align"
-                        v-model="promiseModalTimeout.ui.align"
+                        v-model="promiseModalMultiple.ui.align"
                     ></v-select>
-                    <v-text-field label="Positive Message" v-model="promiseModalTimeout.ui.positiveMessage"></v-text-field>
-                    <v-text-field label="Negative Message" v-model="promiseModalTimeout.ui.negativeMessage"></v-text-field>
-                    <v-text-field label="Title" v-model="promiseModalTimeout.title"></v-text-field>
-                    <v-text-field label="Content" v-model="promiseModalTimeout.content"></v-text-field>
+                    <v-text-field label="Positive Message" v-model="promiseModalMultiple.ui.positiveMessage"></v-text-field>
+                    <v-text-field label="Negative Message" v-model="promiseModalMultiple.ui.negativeMessage"></v-text-field>
+                    <v-text-field label="Title" v-model="promiseModalMultiple.title"></v-text-field>
+                    <v-text-field label="Content" v-model="promiseModalMultiple.content"></v-text-field>
                 </div>
-                <v-btn class="button" @click="promiseModalOnTimeout">timeout modal on</v-btn>
+                <v-btn class="button" @click="onMultiplePromiseModal">Multiple Modal On</v-btn>
             </div>
-           
+            <div class="content-area">
+                <h2>Promise Modal - UI TEST</h2>
+                <div class="option flex">
+                    <v-btn class="button" small @click="onClickUITest({size: 'small', align: 'center'}, 'size: SMALL / align: CENTER', 'MODAL TEST')">small / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'small', align: 'center', negativeMessage: '취소'}, 'size: SMALL / align: CENTER / NEGATIVE', 'MODAL TEST')">small / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'small', align: 'left'}, 'size: SMALL / align: LEFT', 'MODAL TEST')">small / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'small', align: 'left', negativeMessage: '취소'}, 'size: SMALL / align: LEFT / NEGATIVE', 'MODAL TEST')">small / left / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({align: 'center'}, 'size: NORMAL / align: CENTER', 'MODAL TEST')">normal / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({align: 'center', negativeMessage: '취소'}, 'size: NORMAL / align: CENTER / NEGATIVE', 'MODAL TEST')">normal / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({align: 'left'}, 'size: NORMAL / align: LEFT', 'MODAL TEST')">normal / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({align: 'left', negativeMessage: '취소'}, 'size: NORMAL / align: LEFT / NEGATIVE', 'MODAL TEST')">normal / left / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'big', align: 'center'}, 'size: BIG / align: CENTER', 'MODAL TEST')">big / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'big', align: 'center', negativeMessage: '취소'}, 'size: BIG / align: CENTER / NEGATIVE', 'MODAL TEST')">big / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'big', align: 'left'}, 'size: BIG / align: LEFT', 'MODAL TEST')">big / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'big', align: 'left', negativeMessage: '취소'}, 'size: BIG / align: LEFT / NEGATIVE', 'MODAL TEST')">big / left / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'full', align: 'center'}, 'size: FULL / align: CENTER', 'MODAL TEST')">full / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'full', align: 'center', negativeMessage: '취소'}, 'size: FULL / align: CENTER / NEGATIVE', 'MODAL TEST')">full / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'full', align: 'left'}, 'size: FULL / align: LEFT', 'MODAL TEST')">full / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITest({size: 'full', align: 'left', negativeMessage: '취소'}, 'size: FULL / align: LEFT / NEGATIVE', 'MODAL TEST')">full / left / negative</v-btn>
+                </div>
+            </div>
         </div>
     </div>
 </template>

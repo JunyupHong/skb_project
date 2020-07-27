@@ -10,12 +10,21 @@
             width: 48%;
             background: #eee;
             border-radius: 4px;
-            padding: 24px 36px 36px 36px;
+            padding: 24px 36px 24px 36px;
             .option {
                 margin: 24px 0;
+                .button {
+                    width: 49%;
+                }
             }
             .button {
                 width: 100%;
+                margin-bottom: 12px;
+            }
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
         }
     }

@@ -1,14 +1,6 @@
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
-
-type SizeType = 'small' | 'big' | 'normal' | 'full';
-type AlignType = 'center' | 'left';
-interface UIOptionType {
-    size?: SizeType;
-    align?: AlignType;
-    negativeMessage?: string;
-    positiveMessage?: string;
-}
+import { UIOptionType} from '../../components/promiseModal/type';
 
 @Component({})
 export default class Main extends Vue {
@@ -26,20 +18,6 @@ export default class Main extends Vue {
         title: '',
         content: 'normal modal test',
     }
-    private normalModalTimeout: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
-        option: {
-            size: ['small', 'normal', 'big'],
-            align: ['center', 'left'], 
-        },
-        ui: {
-            size: 'normal',
-            align: 'center',
-            positiveMessage: '확인',
-            negativeMessage: '',
-        },
-        title: '',
-        content: 'normal modal timeout test',
-    }
 
     private promiseModal: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
         option: {
@@ -55,7 +33,7 @@ export default class Main extends Vue {
         title: '',
         content: 'promise modal test',
     }
-    private promiseModalTimeout: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
+    private promiseModalMultiple: {option: {size: string[]; align: string[]}; ui: UIOptionType; title: string; content: string} = {
         option: {
             size: ['small', 'normal', 'big'],
             align: ['center', 'left'], 
@@ -71,25 +49,18 @@ export default class Main extends Vue {
     }
 
     private normalModalOn () {
-        console.log(this.normalModal);
+        console.log('normal modal start');
         this.$modal.on({
             size: this.normalModal.ui.size,
             align: this.normalModal.ui.align,
             positiveMessage: this.normalModal.ui.positiveMessage !== '' ? this.normalModal.ui.positiveMessage : undefined,
             negativeMessage: this.normalModal.ui.negativeMessage !== '' ? this.normalModal.ui.negativeMessage : undefined,
         }, this.normalModal.content, this.normalModal.title !== '' ? this.normalModal.title : undefined);
-    }
-    private normalModalOnTimeout() {
-        setTimeout(() => this.$modal.on({
-                size: this.normalModalTimeout.ui.size,
-                align: this.normalModalTimeout.ui.align,
-                positiveMessage: this.normalModalTimeout.ui.positiveMessage !== '' ? this.normalModalTimeout.ui.positiveMessage : undefined,
-                negativeMessage: this.normalModalTimeout.ui.negativeMessage !== '' ? this.normalModalTimeout.ui.negativeMessage : undefined,
-            }, this.normalModalTimeout.content, this.normalModalTimeout.title !== '' ? this.normalModalTimeout.title : undefined),
-            1500);
+        console.log('normal modal end');
     }
 
     private async promiseModalOn() {
+        console.log('promise modal start');
         try {
             await this.$promiseModal.on({
                 size: this.promiseModal.ui.size,
@@ -97,30 +68,42 @@ export default class Main extends Vue {
                 positiveMessage: this.promiseModal.ui.positiveMessage !== '' ? this.promiseModal.ui.positiveMessage : undefined,
                 negativeMessage: this.promiseModal.ui.negativeMessage !== '' ? this.promiseModal.ui.negativeMessage : undefined,
             }, this.promiseModal.content, this.promiseModal.title !== '' ? this.promiseModal.title : undefined);
-            console.log('resolve done');
+            console.log('click resolve');
         } catch(e) {
-            console.log('reject done');
+            console.log('click reject');
+        } finally {
+            console.log('promise modal end');
         }
     }
-    private async promiseModalOnTimeout() {
-        setTimeout(async () => {
-            try {
-                await this.$promiseModal.on({
-                    size: this.promiseModalTimeout.ui.size,
-                    align: this.promiseModalTimeout.ui.align,
-                    positiveMessage: this.promiseModalTimeout.ui.positiveMessage !== '' ? this.promiseModalTimeout.ui.positiveMessage : undefined,
-                    negativeMessage: this.promiseModalTimeout.ui.negativeMessage !== '' ? this.promiseModalTimeout.ui.negativeMessage : undefined,
-                }, this.promiseModalTimeout.content, this.promiseModalTimeout.title !== '' ? this.promiseModalTimeout.title : undefined);
-                console.log('timeout resolve done');
-                await this.$promiseModal.on({size: 'full'},'두번째 modal 입니다', 'PROMISE MODAL');
-                console.log('timeout resolve2');
-            } catch(e) {
-                console.log('timeout reject done');
-            }
-        },
-        1500);
+    private async onMultiplePromiseModal() {
+        try {
+            await this.$promiseModal.on({
+                size: this.promiseModalMultiple.ui.size,
+                align: this.promiseModalMultiple.ui.align,
+                positiveMessage: this.promiseModalMultiple.ui.positiveMessage !== '' ? this.promiseModalMultiple.ui.positiveMessage : undefined,
+                negativeMessage: this.promiseModalMultiple.ui.negativeMessage !== '' ? this.promiseModalMultiple.ui.negativeMessage : undefined,
+            }, this.promiseModalMultiple.content, this.promiseModalMultiple.title !== '' ? this.promiseModalMultiple.title : undefined);
+            console.log('modal done');
+            await this.$promiseModal.on({positiveMessage: '결제', negativeMessage: '취소'},'결제하시겠습니까?', 'PROMISE MODAL');
+            console.log('결제 modal done');
+            await this.$promiseModal.on({}, '결제가 완료 되었습니다', 'PROMISE MODAL');
+            console.log('결제 완료 modal done');
+        } catch(e) {
+            await this.$promiseModal.on({size: 'small'}, '결제가 취소되었습니다', 'PROMISE MODAL');
+            console.log('결제 취소 modal done');
+        } finally {
+            await this.$promiseModal.on({size: 'small'}, '결제 과정 완료', 'PROMISE MODAL');
+            console.log('modal process done');
+        }
     }
-    private mounted () {
-        // this.$promiseModal.on({}, 'content', 'tt');
+
+    private async onClickUITest(option: UIOptionType, content: string, title: string) {
+        try {
+            console.log('promise modal on');
+            await this.$promiseModal.on(option, content, title);
+            console.log('promise modal off - resolve');
+        } catch(e) {
+            console.log('promise modal off - reject');
+        }
     }
 }
