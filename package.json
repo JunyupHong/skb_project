@@ -1,10 +1,12 @@
 {
-  "name": "skb_project",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-promise-modal",
+  "version": "0.1.1",
+  "private": false,
+  "main": "dist/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-module": "vue-cli-service build --target lib src/app/app.vue",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
