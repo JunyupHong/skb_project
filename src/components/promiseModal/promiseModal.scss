@@ -2,6 +2,9 @@ $promise-modal-color: rgb(107, 103, 103);
 $title-color: #ededed;
 $text-color: rgb(190, 182, 182);
 $button-color: rgb(90, 83, 83);
+* {
+    box-sizing: border-box;
+}
 
 .promise-modal-wrapper {
     font-family: Avenir, Helvetica, Arial, sans-serif;

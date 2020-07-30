@@ -1,12 +1,31 @@
 {
   "name": "vue-promise-modal",
-  "version": "0.1.3",
+  "version": "0.1.19",
   "private": false,
-  "main": "dist/index.js",
+  "main": "dist/vue-promise-modal.common.js",
+  "files": [
+    "dist",
+    "src/components/promiseModal"
+  ],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue-promise-modal",
+    "modal",
+    "promise-modal"
+  ],
+  "author": {
+      "name": "Junyup Hong",
+      "email": "junyup.hong@gmail.com"
+  },
+  "bugs": {
+      "url": "https://github.com/junyup0319/vue-promise-modal/issue"
+  },
+  "homepage": "https://github.com/junyup0319/vue-promise-modal",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-module": "vue-cli-service build --target lib src/app/app.vue",
+    "build-module": "vue-cli-service build --target lib src/components/promiseModal/index.ts",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
