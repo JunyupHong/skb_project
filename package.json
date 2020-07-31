@@ -1,6 +1,6 @@
 {
   "name": "vue-promise-modal",
-  "version": "0.1.19",
+  "version": "0.1.27",
   "private": false,
   "main": "dist/vue-promise-modal.common.js",
   "files": [
@@ -11,17 +11,17 @@
     "vue",
     "vuejs",
     "vue-promise-modal",
-    "modal",
-    "promise-modal"
+    "promise-modal",
+    "modal"
   ],
   "author": {
       "name": "Junyup Hong",
       "email": "junyup.hong@gmail.com"
   },
   "bugs": {
-      "url": "https://github.com/junyup0319/vue-promise-modal/issue"
+      "url": "https://github.com/junyup0319/skb_project/issue"
   },
-  "homepage": "https://github.com/junyup0319/vue-promise-modal",
+  "homepage": "https://github.com/junyup0319/skb_project",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
