@@ -1,7 +1,7 @@
-$promise-modal-color: rgb(107, 103, 103);
-$title-color: #ededed;
-$text-color: rgb(190, 182, 182);
-$button-color: rgb(90, 83, 83);
+$promise-modal-color: #4e495b;
+$title-color: #d4d4d4;
+$text-color: #aaaaaa;
+$button-color: rgba(245, 245, 245, 0.12);
 * {
     box-sizing: border-box;
 }
@@ -31,7 +31,7 @@ $button-color: rgb(90, 83, 83);
         &[size=big] {
             width: 800px;
             min-height: 480px;
-            padding: 32px;
+            padding: 88px;
         }
         &[size=full] {
             width: 100%;
@@ -98,7 +98,7 @@ $button-color: rgb(90, 83, 83);
                 &[size=big] {
                     margin: 12px 0;
                     max-height: 400px;
-                    font-size: 36px;
+                    font-size: 32px;
                 }
                 &[size=full] {
                     margin: 24px 0;
@@ -142,7 +142,7 @@ $button-color: rgb(90, 83, 83);
                 &[size=big] {
                     font-weight: 600;
                     font-size: 32px;
-                    padding: 12px 88px;
+                    padding: 12px 72px;
                     margin-right: 20px;
                 }
                 &[size=full] {
