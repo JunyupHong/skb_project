@@ -4,12 +4,16 @@
     -moz-osx-font-smoothing: grayscale;
 
     color: #2c3e50;
-    width: 100vw;
+    // width: 100vw;
     height: 100vh;
     padding: 0 36px;
+    background: rgba(8, 1, 31, 0.88);
+    overflow: auto;
 }
 
-
+#app::-webkit-scrollbar {
+    display: none;
+}
 // // CSS RESET
 // html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 // p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd,
