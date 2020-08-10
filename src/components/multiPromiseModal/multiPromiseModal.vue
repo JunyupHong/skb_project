@@ -9,9 +9,9 @@
             </div>
             <div class="select-area">
                 <a-radio-group class="select-button-area" v-model="radioButton" button-style="solid">
-                    <a-radio class="select-button" :value="1" :size="ui.size">청구서 결제</a-radio>
-                    <a-radio class="select-button" :value="2" :size="ui.size">카드 결제</a-radio>
-                    <a-radio class="select-button" :value="3" :size="ui.size">휴대폰 결제</a-radio>
+                    <a-radio class="select-button" :value="0" :size="ui.size">청구서 결제</a-radio>
+                    <a-radio class="select-button" :value="1" :size="ui.size">카드 결제</a-radio>
+                    <a-radio class="select-button" :value="2" :size="ui.size">휴대폰 결제</a-radio>
                 </a-radio-group>
             </div>
             <div class="button-area" :center="alignCenter">

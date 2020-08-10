@@ -109,8 +109,8 @@ export default class Main extends Vue {
     private async onClickUITestMulti(option: UIOptionType, content: string, title: string) {
         try {
             console.log('promise modal on');
-            await this.$multiPromiseModal.on(option, content, title);
-            console.log('promise modal off - resolve');
+            const idx = await this.$multiPromiseModal.on(option, content, title);
+            console.log('promise modal off - resolve', idx);
         } catch(e) {
             console.log('promise modal off - reject');
         }

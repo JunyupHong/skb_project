@@ -26,10 +26,10 @@ export default class MultiPromiseModal extends Vue {
         negativeMessage: undefined,
         positiveMessage: '확인',
     };
-    private radioButton = 1;
+    private radioButton = 0;
     private title?: string = undefined;
     private content = '';
-    private resolve = () => {
+    private resolve = (selectedIdx?: number) => {
         // empty function - lint error
     };
     private reject = () => {
@@ -60,7 +60,7 @@ export default class MultiPromiseModal extends Vue {
 
     private onResolve() {
         this.ui.isOpen = false;
-        this.resolve();
+        this.resolve(this.radioButton);
     }
     private onReject() {
         this.ui.isOpen = false;
