@@ -1,0 +1,194 @@
+$promise-modal-color: #4e495b;
+$title-color: #d4d4d4;
+$text-color: #aaaaaa;
+$button-color: rgba(245, 245, 245, 0.12);
+
+* {
+    box-sizing: border-box;
+}
+
+.multi-promise-modal-wrapper {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+
+    .promise-modal-window {
+        &[size=normal] {
+            width: 600px;
+            min-height: 380px;
+            padding: 60px;
+        }
+        &[size=small] {
+            width: 480px;
+            min-height: 300px;
+            padding: 40px;
+        }
+        &[size=big] {
+            width: 800px;
+            min-height: 480px;
+            padding: 88px;
+        }
+        &[size=full] {
+            width: 100%;
+            height: 100%;
+            padding: 120px;
+        }
+        background: $promise-modal-color;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+        .title-area {
+            .title {
+                color: $title-color;
+                font-weight: 600;
+                &[center] {
+                   text-align: center; 
+                }
+                &[size=normal] {
+                    font-size: 36px;
+                }
+                &[size=small] {
+                    font-size: 32px;
+                }
+                &[size=big] {
+                    font-size: 48px;
+                }
+                &[size=full] {
+                    font-size: 60px;
+                }
+            }
+            .empty-space {
+                flex: 1;
+            }
+            .close-icon {
+                color: $title-color;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .content-area {
+            flex: 2;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            .content {
+                flex: 1;
+                color: $text-color;
+                font-weight: 400;
+                &[center] {
+                    text-align: center;
+                }
+                &[size=normal] {
+                    margin: 12px 0;
+                    max-height: 400px;
+                    font-size: 24px;
+                }
+                &[size=small] {
+                    margin: 8px 0;
+                    max-height: 360px;
+                    font-size: 24px;
+                }
+                &[size=big] {
+                    margin: 12px 0;
+                    max-height: 400px;
+                    font-size: 32px;
+                }
+                &[size=full] {
+                    margin: 24px 0;
+                    max-height: 600px;
+                    font-size: 40px;
+                }
+            }
+        }
+        .select-area {
+            flex: 1;
+            .select-button-area {
+                display: flex;
+                justify-content: center !important;
+                .select-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+                    text-align: center;
+                    color: $text-color !important;
+                    &[size=small] {
+                        font-size: 18px !important;
+                        font-weight: 500;
+                    }
+                    &[size=normal] {
+                        font-size: 20px !important;
+                        font-weight: 500;
+                    }
+                    &[size=big] {
+                        font-size: 22px !important;
+                        font-weight: 500;
+                    }
+                    &[size=full] {
+                        font-size: 30px !important;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+ 
+        .button-area {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            &[center] {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .button {
+                text-align: center;
+                
+                color: $text-color;
+                box-sizing: content-box;
+                background: $button-color;
+                border: solid 3px $promise-modal-color;
+                &:hover {
+                    cursor: pointer;
+                    border: solid 3px $title-color;
+                    color: $title-color;
+                }
+                &[size=normal] {
+                    font-weight: 600;
+                    font-size: 28px;
+                    padding: 12px 80px;
+                    margin-right: 12px;
+                }
+                &[size=small] {
+                    font-weight: 500;
+                    font-size: 24px;
+                    padding: 8px 64px;
+                    margin-right: 8px;
+                }
+                &[size=big] {
+                    font-weight: 600;
+                    font-size: 32px;
+                    padding: 12px 72px;
+                    margin-right: 20px;
+                }
+                &[size=full] {
+                    font-weight: 600;
+                    font-size: 32px;
+                    padding: 12px 88px;
+                    margin: 0 20px;
+                }
+                &.positive {
+                }
+                &.negative {
+                }
+            }
+        }
+    }
+}

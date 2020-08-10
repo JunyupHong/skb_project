@@ -15,11 +15,11 @@
     "modal"
   ],
   "author": {
-      "name": "Junyup Hong",
-      "email": "junyup.hong@gmail.com"
+    "name": "Junyup Hong",
+    "email": "junyup.hong@gmail.com"
   },
   "bugs": {
-      "url": "https://github.com/junyup0319/skb_project/issue"
+    "url": "https://github.com/junyup0319/skb_project/issue"
   },
   "homepage": "https://github.com/junyup0319/skb_project",
   "scripts": {
@@ -31,6 +31,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ant-design-vue": "^1.6.4",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",

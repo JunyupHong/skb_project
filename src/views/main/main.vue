@@ -89,6 +89,30 @@
                 </div>
             </div>
         </div>
+        <div class="line"></div>
+        <div class="test-area">
+            <div class="content-area">
+                <h2>Multi Promise Modal - UI TEST</h2>
+                <div class="option flex">
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'small', align: 'center'}, 'size: SMALL / align: CENTER', 'MODAL TEST')">small / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'small', align: 'center', negativeMessage: '취소'}, 'size: SMALL / align: CENTER / NEGATIVE', 'MODAL TEST')">small / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'small', align: 'left'}, 'size: SMALL / align: LEFT', 'MODAL TEST')">small / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'small', align: 'left', negativeMessage: '취소'}, 'size: SMALL / align: LEFT / NEGATIVE', 'MODAL TEST')">small / left / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({align: 'center'}, 'size: NORMAL / align: CENTER', 'MODAL TEST')">normal / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({align: 'center', negativeMessage: '취소'}, 'size: NORMAL / align: CENTER / NEGATIVE', 'MODAL TEST')">normal / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({align: 'left'}, 'size: NORMAL / align: LEFT', 'MODAL TEST')">normal / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({align: 'left', negativeMessage: '취소'}, 'size: NORMAL / align: LEFT / NEGATIVE', 'MODAL TEST')">normal / left / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'big', align: 'center'}, 'size: BIG / align: CENTER', 'MODAL TEST')">big / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'big', align: 'center', negativeMessage: '취소'}, 'size: BIG / align: CENTER / NEGATIVE', 'MODAL TEST')">big / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'big', align: 'left'}, 'size: BIG / align: LEFT', 'MODAL TEST')">big / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'big', align: 'left', negativeMessage: '취소'}, 'size: BIG / align: LEFT / NEGATIVE', 'MODAL TEST')">big / left / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'full', align: 'center'}, 'size: FULL / align: CENTER', 'MODAL TEST')">full / center</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'full', align: 'center', negativeMessage: '취소'}, 'size: FULL / align: CENTER / NEGATIVE', 'MODAL TEST')">full / center / negative</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'full', align: 'left'}, 'size: FULL / align: LEFT', 'MODAL TEST')">full / left</v-btn>
+                    <v-btn class="button" small @click="onClickUITestMulti({size: 'full', align: 'left', negativeMessage: '취소'}, 'size: FULL / align: LEFT / NEGATIVE', 'MODAL TEST')">full / left / negative</v-btn>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 

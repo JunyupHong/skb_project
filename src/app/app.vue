@@ -6,6 +6,6 @@
 
 <script src="./app.ts"/>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import './app.scss';
 </style>
