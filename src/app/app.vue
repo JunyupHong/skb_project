@@ -4,7 +4,7 @@
   </v-app>
 </template>
 
-<script src="./app.ts"/>
+<script src="./app.ts" />
 
 <style lang="scss" scoped>
 @import './app.scss';
