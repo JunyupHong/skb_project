@@ -8,7 +8,12 @@ Vue.use(Radio);
 
 declare module 'vue/types/vue' {
   interface MultiPromiseModal extends Vue {
-    on: (uiOption: UIOptionType, content: string, title?: string) => void;
+    on: (
+      uiOption: UIOptionType,
+      content: string,
+      title?: string,
+      buttons?: string[]
+    ) => void;
     onResolve: () => void;
     onReject: () => void;
   }
@@ -34,6 +39,7 @@ export default class MultiPromiseModal extends Vue {
   private radioButton = 0;
   private title?: string = undefined;
   private content = '';
+  private buttons?: string[] = undefined;
   private resolve = (selectedIdx?: number) => {
     console.log(selectedIdx);
   };
@@ -43,11 +49,17 @@ export default class MultiPromiseModal extends Vue {
   get alignCenter() {
     return this.ui.align === 'center';
   }
-
-  private on(uiOption: UIOptionType, content: string, title?: string) {
+  private on(
+    uiOption: UIOptionType,
+    content: string,
+    title?: string,
+    buttons?: string[]
+  ) {
     if (!this.ui.isOpen) {
+      this.radioButton = 0;
       this.title = title;
       this.content = content;
+      this.buttons = buttons;
       this.ui.size = uiOption.size ? uiOption.size : 'normal';
       this.ui.align = uiOption.align ? uiOption.align : 'center';
       this.ui.negativeMessage = uiOption.negativeMessage

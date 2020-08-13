@@ -18,20 +18,19 @@
           v-html="content"
         ></div>
       </div>
-      <div class="select-area">
+      <div class="select-area" v-show="buttons">
         <a-radio-group
           class="select-button-area"
           v-model="radioButton"
           button-style="solid"
         >
-          <a-radio class="select-button" :value="0" :size="ui.size"
-            >청구서 결제</a-radio
-          >
-          <a-radio class="select-button" :value="1" :size="ui.size"
-            >카드 결제</a-radio
-          >
-          <a-radio class="select-button" :value="2" :size="ui.size"
-            >휴대폰 결제</a-radio
+          <a-radio
+            class="select-button"
+            v-for="(button, i) in buttons"
+            :key="'button-' + i"
+            :value="i"
+            :size="ui.size"
+            >{{ button }}</a-radio
           >
         </a-radio-group>
       </div>
