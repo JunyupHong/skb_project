@@ -1,7 +1,7 @@
 <template>
-  <v-app id="app">
-    <router-view />
-  </v-app>
+    <v-app id="app">
+        <router-view />
+    </v-app>
 </template>
 
 <script src="./app.ts" />

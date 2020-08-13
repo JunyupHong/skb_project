@@ -15,22 +15,22 @@ $button-color: rgb(90, 83, 83);
     display: flex;
 
     .modal-window {
-        &[size=normal] {
+        &[size='normal'] {
             width: 600px;
             min-height: 380px;
             padding: 60px;
         }
-        &[size=small] {
+        &[size='small'] {
             width: 480px;
             min-height: 300px;
             padding: 40px;
         }
-        &[size=big] {
+        &[size='big'] {
             width: 800px;
             min-height: 480px;
             padding: 32px;
         }
-        &[size=full] {
+        &[size='full'] {
             width: 100%;
             height: 100%;
             padding: 120px;
@@ -39,24 +39,24 @@ $button-color: rgb(90, 83, 83);
         margin: auto;
         display: flex;
         flex-direction: column;
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
         .title-area {
             .title {
                 color: $title-color;
                 font-weight: 600;
                 &[center] {
-                   text-align: center; 
+                    text-align: center;
                 }
-                &[size=normal] {
+                &[size='normal'] {
                     font-size: 36px;
                 }
-                &[size=small] {
+                &[size='small'] {
                     font-size: 32px;
                 }
-                &[size=big] {
+                &[size='big'] {
                     font-size: 48px;
                 }
-                &[size=full] {
+                &[size='full'] {
                     font-size: 60px;
                 }
             }
@@ -82,22 +82,22 @@ $button-color: rgb(90, 83, 83);
                 &[center] {
                     text-align: center;
                 }
-                &[size=normal] {
+                &[size='normal'] {
                     margin: 12px 0;
                     max-height: 400px;
                     font-size: 24px;
                 }
-                &[size=small] {
+                &[size='small'] {
                     margin: 8px 0;
                     max-height: 360px;
                     font-size: 24px;
                 }
-                &[size=big] {
+                &[size='big'] {
                     margin: 12px 0;
                     max-height: 400px;
                     font-size: 36px;
                 }
-                &[size=full] {
+                &[size='full'] {
                     margin: 24px 0;
                     max-height: 600px;
                     font-size: 40px;
@@ -122,25 +122,25 @@ $button-color: rgb(90, 83, 83);
                     border: solid 3px $title-color;
                     color: $title-color;
                 }
-                &[size=normal] {
+                &[size='normal'] {
                     font-weight: 600;
                     font-size: 28px;
                     padding: 12px 80px;
                     margin: 0 6px;
                 }
-                &[size=small] {
+                &[size='small'] {
                     font-weight: 500;
                     font-size: 24px;
                     padding: 8px 64px;
                     margin: 0 4px;
                 }
-                &[size=big] {
+                &[size='big'] {
                     font-weight: 600;
                     font-size: 32px;
                     padding: 12px 88px;
                     margin: 0 10px;
                 }
-                &[size=full] {
+                &[size='full'] {
                     font-weight: 600;
                     font-size: 32px;
                     padding: 12px 88px;

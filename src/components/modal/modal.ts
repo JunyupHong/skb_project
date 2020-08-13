@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import {Component} from 'vue-property-decorator';
-
+import { Component } from 'vue-property-decorator';
 
 type SizeType = 'normal' | 'small' | 'big' | 'full';
 type AlignType = 'center' | 'left';
@@ -20,7 +19,7 @@ declare module 'vue/types/vue' {
 
 @Component({})
 export default class Modal extends Vue {
-    private ui: {isOpen: boolean; size: SizeType; align: AlignType; negativeMessage?: string; positiveMessage?: string} = {
+    private ui: { isOpen: boolean; size: SizeType; align: AlignType; negativeMessage?: string; positiveMessage?: string } = {
         isOpen: false,
         size: 'normal',
         align: 'center',

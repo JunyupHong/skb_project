@@ -13,8 +13,6 @@ export default {
         if (Vue.prototype.$promiseModal === undefined) {
             Vue.prototype.$promiseModal = this.instance;
         }
-        this.instance.$mount(document.body.appendChild(document.createElement('div')))
-    }
-}
-
-
+        this.instance.$mount(document.body.appendChild(document.createElement('div')));
+    },
+};

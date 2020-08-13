@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import { SizeType, AlignType, UIOptionType} from './type';
+import { SizeType, AlignType, UIOptionType } from './type';
 
 declare module 'vue/types/vue' {
     interface PromiseModal extends Vue {
@@ -11,10 +11,10 @@ declare module 'vue/types/vue' {
 }
 
 @Component({
-    name: 'promiseModal'
+    name: 'promiseModal',
 })
 export default class PromiseModal extends Vue {
-    private ui: {isOpen: boolean; size: SizeType; align: AlignType; negativeMessage?: string; positiveMessage?: string} = {
+    private ui: { isOpen: boolean; size: SizeType; align: AlignType; negativeMessage?: string; positiveMessage?: string } = {
         isOpen: false,
         size: 'normal',
         align: 'center',
