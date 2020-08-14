@@ -7,7 +7,7 @@
             <div class="content-area">
                 <div class="content" :center="alignCenter" :size="ui.size" v-html="desc"></div>
             </div>
-            <div class="select-area" v-show="buttons">
+            <div class="select-area" v-if="buttons">
                 <a-radio-group class="select-button-area" v-model="selectedButton" button-style="solid">
                     <a-radio class="select-button" v-for="(button, i) in buttons" :key="'button-' + i" :value="i" :size="ui.size">{{
                         button
