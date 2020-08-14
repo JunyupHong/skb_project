@@ -8,7 +8,7 @@ Vue.use(Radio);
 
 declare module 'vue/types/vue' {
     interface MultiPromiseModal extends Vue {
-        on: (uiOption: UIOptionType, content: string, title?: string, buttons?: string[]) => void;
+        on: (uiOption: UIOptionType, desc: string, title?: string, buttons?: string[]) => void;
         onResolve: () => void;
         onReject: () => void;
     }
@@ -31,9 +31,9 @@ export default class MultiPromiseModal extends Vue {
         negativeMessage: undefined,
         positiveMessage: '확인',
     };
-    private radioButton = 0;
+    private selectedButton = 0;
     private title?: string = undefined;
-    private content = '';
+    private desc = '';
     private buttons?: string[] = undefined;
     private resolve = (selectedIdx?: number) => {
         console.log(selectedIdx);
@@ -44,11 +44,11 @@ export default class MultiPromiseModal extends Vue {
     get alignCenter() {
         return this.ui.align === 'center';
     }
-    private on(uiOption: UIOptionType, content: string, title?: string, buttons?: string[]) {
+    private on(uiOption: UIOptionType, desc: string, title?: string, buttons?: string[]) {
         if (!this.ui.isOpen) {
-            this.radioButton = 0;
+            this.selectedButton = 0;
             this.title = title;
-            this.content = content;
+            this.desc = desc;
             this.buttons = buttons;
             this.ui.size = uiOption.size ? uiOption.size : 'normal';
             this.ui.align = uiOption.align ? uiOption.align : 'center';
@@ -67,7 +67,7 @@ export default class MultiPromiseModal extends Vue {
 
     private onResolve() {
         this.ui.isOpen = false;
-        this.resolve(this.radioButton);
+        this.resolve(this.selectedButton);
     }
     private onReject() {
         this.ui.isOpen = false;

@@ -69,10 +69,8 @@ export default class Main extends Vue {
             {
                 size: this.normalModal.ui.size,
                 align: this.normalModal.ui.align,
-                positiveMessage:
-                    this.normalModal.ui.positiveMessage !== '' ? this.normalModal.ui.positiveMessage : undefined,
-                negativeMessage:
-                    this.normalModal.ui.negativeMessage !== '' ? this.normalModal.ui.negativeMessage : undefined,
+                positiveMessage: this.normalModal.ui.positiveMessage !== '' ? this.normalModal.ui.positiveMessage : undefined,
+                negativeMessage: this.normalModal.ui.negativeMessage !== '' ? this.normalModal.ui.negativeMessage : undefined,
             },
             this.normalModal.content,
             this.normalModal.title !== '' ? this.normalModal.title : undefined,
@@ -87,10 +85,8 @@ export default class Main extends Vue {
                 {
                     size: this.promiseModal.ui.size,
                     align: this.promiseModal.ui.align,
-                    positiveMessage:
-                        this.promiseModal.ui.positiveMessage !== '' ? this.promiseModal.ui.positiveMessage : undefined,
-                    negativeMessage:
-                        this.promiseModal.ui.negativeMessage !== '' ? this.promiseModal.ui.negativeMessage : undefined,
+                    positiveMessage: this.promiseModal.ui.positiveMessage !== '' ? this.promiseModal.ui.positiveMessage : undefined,
+                    negativeMessage: this.promiseModal.ui.negativeMessage !== '' ? this.promiseModal.ui.negativeMessage : undefined,
                 },
                 this.promiseModal.content,
                 this.promiseModal.title !== '' ? this.promiseModal.title : undefined,
@@ -108,24 +104,14 @@ export default class Main extends Vue {
                 {
                     size: this.promiseModalMultiple.ui.size,
                     align: this.promiseModalMultiple.ui.align,
-                    positiveMessage:
-                        this.promiseModalMultiple.ui.positiveMessage !== ''
-                            ? this.promiseModalMultiple.ui.positiveMessage
-                            : undefined,
-                    negativeMessage:
-                        this.promiseModalMultiple.ui.negativeMessage !== ''
-                            ? this.promiseModalMultiple.ui.negativeMessage
-                            : undefined,
+                    positiveMessage: this.promiseModalMultiple.ui.positiveMessage !== '' ? this.promiseModalMultiple.ui.positiveMessage : undefined,
+                    negativeMessage: this.promiseModalMultiple.ui.negativeMessage !== '' ? this.promiseModalMultiple.ui.negativeMessage : undefined,
                 },
                 this.promiseModalMultiple.content,
                 this.promiseModalMultiple.title !== '' ? this.promiseModalMultiple.title : undefined,
             );
             console.log('modal done');
-            await this.$promiseModal.on(
-                { positiveMessage: '결제', negativeMessage: '취소' },
-                '결제하시겠습니까?',
-                'PROMISE MODAL',
-            );
+            await this.$promiseModal.on({ positiveMessage: '결제', negativeMessage: '취소' }, '결제하시겠습니까?', 'PROMISE MODAL');
             console.log('결제 modal done');
             await this.$promiseModal.on({}, '결제가 완료 되었습니다', 'PROMISE MODAL');
             console.log('결제 완료 modal done');
