@@ -19,7 +19,7 @@ describe('PromiseModal TEST', () => {
             expect(wrapper.findAll('.select-area').length).equal(0);
         });
     });
-    it('buttons arguemtn가 있을 때 - Button 생성', () => {
+    it('buttons argumentt가 있을 때 - Button 생성', () => {
         const wrapper: any = mount(PromiseModal);
         const inputButtons = ['1', '2', '3'];
         wrapper.vm.on({}, 'desc', 'title', inputButtons);
@@ -28,7 +28,7 @@ describe('PromiseModal TEST', () => {
             expect(buttons.length).equal(inputButtons.length);
         });
     });
-    it('Return Value Test', () => {
+    it('Resolve - Return Value Test', () => {
         const wrapper: any = mount(PromiseModal);
         const inputButtons = ['1', '2', '3'];
         const selectIdx = 1;
